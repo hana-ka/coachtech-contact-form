@@ -2,6 +2,10 @@
 
 @section('title', 'Register')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+@endsection
+
 @section('header-btn')
 <a href="/login">login</a>
 @endsection
@@ -15,20 +19,22 @@
 
         <div class="form-group">
             <label for="name">お名前</label>
-            <input type="text" name="name" id="name" placeholder="例: 山田 太郎">
+            <input type="text" name="name" id="name" placeholder="例：山田 太郎">
         </div>
 
         <div class="form-group">
             <label for="email">メールアドレス</label>
-            <input type="email" name="email" id="email" placeholder="例: example@test.com">
+            <input type="email" name="email" id="email" placeholder="例：example@test.com">
         </div>
 
         <div class="form-group">
             <label for="password">パスワード</label>
-            <input type="password" name="password" id="password" placeholder="例: coachtech">
+            <input type="password" name="password" id="password" placeholder="例：coachtech">
         </div>
 
-        <button type="submit">登録</button>
+        <div class="auth-button">
+            <button type="submit">登録</button>
+        </div>
     </form>
 </div>
 @endsection

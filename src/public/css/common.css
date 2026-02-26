@@ -2,7 +2,6 @@
 
 body {
     margin: 0;
-    background-color: #f1ece7;
     color: #7b6a58;
     font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
@@ -45,57 +44,7 @@ body {
 /* ===== Layout ===== */
 
 .main {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 60px auto;
     padding: 0 20px;
-}
-
-/* ===== Auth Page ===== */
-
-.login,
-.register {
-    width: 100%;
-    background-color: #ffffff;
-    padding: 70px 80px 40px;
-    max-width: 550px;
-    margin: 0 auto;
-    border: 1px solid #e0dcd7;
-}
-
-.login__title,
-.register__title {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 40px;
-}
-
-.form-group {
-    margin-bottom: 30px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #e0dcd7;
-    background-color: #f9f7f5;
-}
-
-input::placeholder {
-    color: #c5bfb8;
-}
-
-button {
-    display: block;
-    width: 120px;
-    margin: 75px auto 0;
-    padding: 8px 0;
-    background-color: #7b6a58;
-    color: #ffffff;
-    border: none;
 }

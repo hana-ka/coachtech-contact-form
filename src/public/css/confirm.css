@@ -1,0 +1,80 @@
+/* ===== Background ===== */
+
+body {
+    background-color: #ffffff;
+}
+
+/* ===== Wrapper ===== */
+
+.confirm-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+/* ===== Title ===== */
+
+.confirm-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+
+/* ===== Table ===== */
+
+.confirm-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* セル共通 */
+
+.confirm-table th,
+.confirm-table td {
+    padding: 22px 24px;
+    font-size: 14px;
+    border: 1px solid #e6e1db;
+}
+
+/* 左列（ラベル） */
+
+.confirm-table th {
+    width: 250px;
+    background-color: #b7a89a;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
+}
+
+/* 右列（値） */
+
+.confirm-table td {
+    background-color: #ffffff;
+    color: #7b6a58;
+}
+
+/* ===== Buttons ===== */
+
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.confirm-submit {
+    width: 120px;
+    height: 40px;
+    background-color: #7b6a58;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.confirm-back {
+    font-size: 14px;
+    color: #7b6a58;
+    text-decoration: underline;
+    line-height: 40px;
+}
