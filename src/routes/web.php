@@ -15,18 +15,20 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [ContactController::class, 'index']);
+Route::get('/', [ContactController::class, 'index'])->name('contacts.index');
 
-Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('contacts.confirm');
 
-Route::post('/thanks', [ContactController::class, 'store']);
+Route::post('/thanks', [ContactController::class, 'store'])->name('contacts.store');
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth');
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.index');
 
 Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
     ->name('admin.destroy');
 
-Route::get('/admin', [AdminController::class, 'index'])
-    ->name('admin.index');
+Route::post('/back', [ContactController::class, 'back'])
+    ->name('contacts.back');

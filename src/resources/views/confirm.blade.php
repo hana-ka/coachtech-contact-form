@@ -11,74 +11,66 @@
 
     <h2 class="confirm-title">Confirm</h2>
 
-    <form action="/thanks" method="post">
+    {{-- 送信フォーム --}}
+    <form action="{{ route('contacts.store') }}" method="post">
         @csrf
 
         <table class="confirm-table">
             <tr>
                 <th>お名前</th>
-                <td>
-                    {{ $data['last_name'] ?? '' }}
-                    {{ $data['first_name'] ?? '' }}
-                </td>
+                <td>{{ $data['last_name'] }} {{ $data['first_name'] }}</td>
             </tr>
-
             <tr>
                 <th>性別</th>
                 <td>
-                    @if(($data['gender'] ?? null) == 1)
-                        男性
-                    @elseif(($data['gender'] ?? null) == 2)
-                        女性
-                    @elseif(($data['gender'] ?? null) == 3)
-                        その他
+                    @if($data['gender'] == 1) 男性
+                    @elseif($data['gender'] == 2) 女性
+                    @else その他
                     @endif
                 </td>
             </tr>
-
             <tr>
                 <th>メールアドレス</th>
-                <td>{{ $data['email'] ?? '' }}</td>
+                <td>{{ $data['email'] }}</td>
             </tr>
-
             <tr>
                 <th>電話番号</th>
-                <td>
-                    {{ $data['tel1'] ?? '' }}{{ $data['tel2'] ?? '' }}{{ $data['tel3'] ?? '' }}
-                </td>
+                <td>{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}</td>
             </tr>
-
             <tr>
                 <th>住所</th>
-                <td>{{ $data['address'] ?? '' }}</td>
+                <td>{{ $data['address'] }}</td>
             </tr>
-
             <tr>
                 <th>建物名</th>
-                <td>{{ $data['building'] ?? '' }}</td>
+                <td>{{ $data['building'] }}</td>
             </tr>
-
             <tr>
                 <th>お問い合わせの種類</th>
-                <td>{{ $data['category'] ?? '' }}</td>
+                <td>{{ $data['category_content'] }}</td>
             </tr>
-
             <tr>
                 <th>お問い合わせ内容</th>
-                <td>{{ $data['detail'] ?? '' }}</td>
+                <td>{{ $data['detail'] }}</td>
             </tr>
         </table>
 
-        {{-- hidden引き継ぎ --}}
+        {{-- hidden --}}
         @foreach($data as $key => $value)
             <input type="hidden" name="{{ $key }}" value="{{ $value }}">
         @endforeach
 
         <div class="confirm-buttons">
             <button type="submit" class="confirm-submit">送信</button>
-            <a href="/" class="confirm-back">修正</a>
         </div>
+    </form>
 
+    <form action="{{ route('contacts.back') }}" method="post">
+        @csrf
+        @foreach($data as $key => $value)
+            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+        @endforeach
+        <button type="submit">修正</button>
     </form>
 
 </div>

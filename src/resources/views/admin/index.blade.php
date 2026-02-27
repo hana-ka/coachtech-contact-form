@@ -66,7 +66,7 @@
 
                 @foreach($contacts as $contact)
                 <tr>
-                    <td>{{ $contact->name }}</td>
+                    <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
 
                     <td>
                         @if($contact->gender == 1) 男性
