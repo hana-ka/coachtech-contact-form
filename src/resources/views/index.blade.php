@@ -11,7 +11,7 @@
 
     <h2 class="contact-title">Contact</h2>
 
-    <form action="/confirm" method="post" class="contact-form">
+    <form action="/confirm" method="post" class="contact-form" novalidate>
         @csrf
 
         {{-- お名前 --}}
@@ -21,7 +21,16 @@
             </div>
             <div class="form-input name-row">
                 <input type="text" name="last_name" placeholder="例：山田">
+
+                @error('last_name')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
+
                 <input type="text" name="first_name" placeholder="例：太郎">
+
+                @error('first_name')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -34,6 +43,10 @@
                 <label><input type="radio" name="gender" value="1"> 男性</label>
                 <label><input type="radio" name="gender" value="2"> 女性</label>
                 <label><input type="radio" name="gender" value="3"> その他</label>
+
+                @error('gender')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -44,6 +57,10 @@
             </div>
             <div class="form-input">
                 <input type="email" name="email" placeholder="例：example@test.com">
+
+                @error('email')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -58,6 +75,10 @@
                 <input type="text" name="tel2" placeholder="1234">
                 <span>-</span>
                 <input type="text" name="tel3" placeholder="5678">
+
+                @error('tel1')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -68,6 +89,10 @@
             </div>
             <div class="form-input">
                 <input type="text" name="address" placeholder="例：東京都渋谷区渋谷1-23">
+
+                @error('address')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -90,6 +115,9 @@
                 <select name="category_id">
                     <option value="" disabled selected>選択してください</option>
                 </select>
+                @error('category_id')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 
@@ -100,6 +128,10 @@
             </div>
             <div class="form-input">
                 <textarea name="detail" placeholder="お問合せ内容をご記載ください"></textarea>
+
+                @error('detail')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
             </div>
         </div>
 

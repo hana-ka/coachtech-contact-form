@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -10,8 +11,9 @@ class ContactController extends Controller
         return view('index');
     }
 
-    public function confirm(Request $request){
-        $data = $request->all();
+    public function confirm(ContactRequest $request)
+    {
+        $data = $request->validated();
         return view('confirm', compact('data'));
     }
 

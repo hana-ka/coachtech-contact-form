@@ -21,14 +21,13 @@
     {{-- ================= 検索フォーム ================= --}}
     <div class="admin-search">
         <form class="search-form">
-
             <input type="text" placeholder="名前やメールアドレスを入力してください">
 
             <select>
                 <option value="">性別</option>
-                <option>男性</option>
-                <option>女性</option>
-                <option>その他</option>
+                <option value="1">男性</option>
+                <option value="2">女性</option>
+                <option value="3">その他</option>
             </select>
 
             <select>
@@ -39,24 +38,17 @@
 
             <button type="submit" class="search-btn">検索</button>
             <button type="reset" class="reset-btn">リセット</button>
-
         </form>
     </div>
 
+    {{-- エクスポート & ページネーション --}}
     <div class="admin-top-row">
-    <button class="export-btn">エクスポート</button>
+        <button class="export-btn">エクスポート</button>
 
-    <div class="admin-pagination">
-        <span>&lt;</span>
-        <span class="active">1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>&gt;</span>
+        <div class="admin-pagination">
+            {{ $contacts->links('pagination::bootstrap-4') }}
+        </div>
     </div>
-</div>
-
 
     {{-- ================= 一覧テーブル ================= --}}
     <div class="admin-table">
@@ -71,16 +63,62 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- ダミーデータ --}}
+
+                @foreach($contacts as $contact)
                 <tr>
-                    <td>山田 太郎</td>
-                    <td>男性</td>
-                    <td>test@example.com</td>
-                    <td>商品のお問い合わせ</td>
+                    <td>{{ $contact->name }}</td>
+
                     <td>
-                        <button class="detail-btn">詳細</button>
+                        @if($contact->gender == 1) 男性
+                        @elseif($contact->gender == 2) 女性
+                        @else その他
+                        @endif
+                    </td>
+
+                    <td>{{ $contact->email }}</td>
+
+                    <td>{{ $contact->category->content ?? '' }}</td>
+
+                    <td>
+                        <label for="modal-{{ $contact->id }}" class="detail-btn">詳細</label>
                     </td>
                 </tr>
+
+                {{-- ===== 個別モーダル ===== --}}
+                <input type="checkbox" id="modal-{{ $contact->id }}" class="modal-toggle">
+
+                <div class="modal">
+                    <div class="modal-content">
+
+                        <label for="modal-{{ $contact->id }}" class="modal-close">×</label>
+
+                        <h3>お問い合わせ詳細</h3>
+
+                        <p><strong>お名前：</strong>{{ $contact->name }}</p>
+                        <p><strong>性別：</strong>
+                            @if($contact->gender == 1) 男性
+                            @elseif($contact->gender == 2) 女性
+                            @else その他
+                            @endif
+                        </p>
+                        <p><strong>メール：</strong>{{ $contact->email }}</p>
+                        <p><strong>電話番号：</strong>{{ $contact->tel }}</p>
+                        <p><strong>住所：</strong>{{ $contact->address }}</p>
+                        <p><strong>建物名：</strong>{{ $contact->building }}</p>
+                        <p><strong>種類：</strong>{{ $contact->category->content ?? '' }}</p>
+                        <p><strong>内容：</strong>{{ $contact->detail }}</p>
+
+                        <form action="{{ route('admin.destroy', $contact->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-btn">削除</button>
+                        </form>
+
+                    </div>
+                </div>
+
+                @endforeach
+
             </tbody>
         </table>
     </div>

@@ -24,3 +24,9 @@ Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth');
+
+Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
+    ->name('admin.destroy');
+
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.index');
