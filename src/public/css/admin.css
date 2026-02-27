@@ -1,0 +1,221 @@
+/* ================= Background ================= */
+
+body {
+    background-color: #ffffff;
+}
+
+/* ================= Wrapper ================= */
+
+.admin-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 50px 0 100px;
+}
+
+/* ================= Title ================= */
+
+.admin-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 45px;
+    color: #7b6a58;
+}
+
+/* ================= Search Area ================= */
+
+.admin-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ===== 共通入力 ===== */
+
+.search-form input,
+.search-form select {
+    height: 42px;
+    padding: 0 18px;
+    border: 1px solid #e0dcd7;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #b7afa7;
+}
+
+/* 名前検索（広め） */
+
+.search-form input[type="text"] {
+    width: 420px;
+    color: #7b6a58;
+}
+
+/* 性別 */
+
+.search-form select:nth-of-type(1) {
+    width: 110px;
+}
+
+/* お問い合わせ種類 */
+
+.search-form select:nth-of-type(2) {
+    width: 190px;
+}
+
+/* セレクト矢印 */
+
+.search-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23b7afa7' height='8' viewBox='0 0 24 24' width='8' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 10px;
+}
+
+/* 年月日 */
+
+/* ===== Date Input Custom Style ===== */
+
+
+/* ネイティブカレンダーは透明にする（機能は残す） */
+.search-form input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.search-form input[type="date"] {
+    width: 160px;
+    height: 40px;
+    padding: 0 30px 0 16px;
+    border: 1px solid #e0dcd7;
+    background-color: #ffffff;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23b7afa7' height='8' viewBox='0 0 24 24' width='8' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 10px;
+
+    font-size: 14px;
+    color: #b7afa7;
+
+    position: relative;
+}
+/* ================= Buttons ================= */
+
+.search-btn,
+.reset-btn {
+    display: inline-block;
+    white-space: nowrap;
+    /* ← 折り返し防止 */
+    text-align: center;
+}
+
+.search-btn {
+    height: 42px;
+    padding: 0 26px;
+    background-color: #7b6a58;
+    color: #ffffff;
+    border: none;
+}
+
+.reset-btn {
+    height: 42px;
+    padding: 0 26px;
+    background-color: #d9cfc5;
+    color: #ffffff;
+    border: none;
+}
+
+/* ================= Export + Pagination Row ================= */
+
+.admin-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0 18px;
+}
+
+/* エクスポート */
+
+.export-btn {
+    padding: 6px 18px;
+    border: 1px solid #d9cfc5;
+    background-color: #f1ece7;
+    color: #7b6a58;
+    font-size: 13px;
+}
+
+/* ページネーション */
+
+.admin-pagination {
+    display: flex;
+    gap: 6px;
+}
+
+.admin-pagination span {
+    padding: 6px 11px;
+    border: 1px solid #e0dcd7;
+    font-size: 13px;
+    color: #7b6a58;
+}
+
+.admin-pagination .active {
+    background-color: #7b6a58;
+    color: #ffffff;
+    border: none;
+}
+
+/* ================= Table ================= */
+
+.admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e0dcd7;
+}
+
+.admin-table th {
+    background-color: #8b7a67;
+    color: #ffffff;
+    padding: 22px 10px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.admin-table td {
+    padding: 22px 10px;
+    border-top: 1px solid #e9e5e1;
+    text-align: center;
+    color: #7b6a58;
+}
+
+/* ================= Detail Button ================= */
+
+.detail-btn {
+    padding: 6px 18px;
+    border: 1px solid #e0dcd7;
+    background-color: #ffffff;
+    color: #c5bfb8;
+    font-size: 13px;
+}
+
+/* ================= Logout Button ================= */
+
+.logout-btn {
+    padding: 6px 18px;
+    font-size: 13px;
+    background-color: #f5f3f1;
+    color: #c5bfb8;
+    border: 1px solid #d9cfc5;
+    cursor: pointer;
+}
