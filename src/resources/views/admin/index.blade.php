@@ -20,30 +20,38 @@
 
     {{-- ================= 検索フォーム ================= --}}
     <div class="admin-search">
-        <form class="search-form">
-            <input type="text" placeholder="名前やメールアドレスを入力してください">
+        <form method="GET" action="{{ route('admin.index') }}" class="search-form">
+            <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
 
-            <select>
+            <select name="gender">
                 <option value="">性別</option>
                 <option value="1">男性</option>
                 <option value="2">女性</option>
                 <option value="3">その他</option>
             </select>
 
-            <select>
+            <select name="category_id">
                 <option value="">お問い合わせの種類</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"
+                        {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                        {{ $category->content }}
+                    </option>
+                @endforeach
             </select>
 
-            <input type="date">
+            <input type="date" name="date">
 
             <button type="submit" class="search-btn">検索</button>
-            <button type="reset" class="reset-btn">リセット</button>
+            <a href="{{ route('admin.index') }}" class="reset-btn">リセット</a>
         </form>
     </div>
 
     {{-- エクスポート & ページネーション --}}
     <div class="admin-top-row">
-        <button class="export-btn">エクスポート</button>
+        <a href="{{ route('admin.export', request()->query()) }}" class="export-btn">
+            エクスポート
+        </a>
 
         <div class="admin-pagination">
             {{ $contacts->links('pagination::bootstrap-4') }}
@@ -94,7 +102,7 @@
 
                         <h3>お問い合わせ詳細</h3>
 
-                        <p><strong>お名前：</strong>{{ $contact->name }}</p>
+                        <p>お名前：{{ $contact->last_name }} {{ $contact->first_name }}</p>
                         <p><strong>性別：</strong>
                             @if($contact->gender == 1) 男性
                             @elseif($contact->gender == 2) 女性

@@ -307,3 +307,9 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
+
+/* テーブル行ホバー */
+
+.admin-table tbody tr:hover {
+    background-color: #f5f3f1;
+}

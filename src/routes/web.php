@@ -24,8 +24,7 @@ Route::post('/thanks', [ContactController::class, 'store'])->name('contacts.stor
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::get('/admin', [AdminController::class, 'index'])
-    ->middleware('auth');
-Route::get('/admin', [AdminController::class, 'index'])
+    ->middleware('auth')
     ->name('admin.index');
 
 Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
@@ -35,3 +34,6 @@ Route::post('/back', [ContactController::class, 'back'])
     ->name('contacts.back');
 
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/admin/export', [AdminController::class, 'export'])
+    ->name('admin.export');
