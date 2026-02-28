@@ -14,22 +14,39 @@
 <h2 class="register__title">Register</h2>
 
 <div class="register">
-    <form action="/register" method="post">
+    <form action="/register" method="post" novalidate>
         @csrf
 
         <div class="form-group">
             <label for="name">お名前</label>
-            <input type="text" name="name" id="name" placeholder="例：山田 太郎">
+            <input type="text" name="name" id="name"
+                value="{{ old('name') }}"
+                placeholder="例：山田 太郎">
+
+            @error('name')
+                <p class="error-message">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="email">メールアドレス</label>
-            <input type="email" name="email" id="email" placeholder="例：example@test.com">
+            <input type="email" name="email" id="email"
+                value="{{ old('email') }}"
+                placeholder="例：example@test.com">
+
+            @error('email')
+                <p class="error-message">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="password">パスワード</label>
-            <input type="password" name="password" id="password" placeholder="例：coachtech">
+            <input type="password" name="password" id="password"
+                placeholder="例：coachtech">
+
+            @error('password')
+                <p class="error-message">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="auth-button">

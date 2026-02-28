@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
 
 Route::post('/back', [ContactController::class, 'back'])
     ->name('contacts.back');
+
+Route::post('/login', [AuthController::class, 'login']);
