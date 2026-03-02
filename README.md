@@ -31,7 +31,14 @@ composer install
 
 cp .env.example .env
 
-※ `.env` 内のDB設定が `docker-compose.yml` と一致しているか確認してください。
+### ⑥ .envのDB設定を以下に変更してください
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 
 ### ⑥ アプリケーションキー生成
 
