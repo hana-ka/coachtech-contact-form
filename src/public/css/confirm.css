@@ -9,7 +9,7 @@ body {
 .confirm-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 0 80px;
+    padding: 0 0 80px;
 }
 
 /* ===== Title ===== */
@@ -23,8 +23,14 @@ body {
 /* ===== Table ===== */
 
 .confirm-table {
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     border-collapse: collapse;
+}
+
+.confirm-table tr.detail-row td {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* セル共通 */
@@ -44,6 +50,7 @@ body {
     color: #ffffff;
     font-weight: normal;
     text-align: left;
+    padding: 22px 24px 22px 40px;
 }
 
 /* 右列（値） */
@@ -58,23 +65,36 @@ body {
 .confirm-buttons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
+/* formの余白を消す */
+.confirm-form {
+    margin: 0;
+}
+
+/* 送信ボタン */
 .confirm-submit {
     width: 120px;
     height: 40px;
     background-color: #7b6a58;
     color: #ffffff;
     border: none;
-    font-size: 14px;
     cursor: pointer;
 }
 
+/* 修正（文字＋下線のみ） */
 .confirm-back {
-    font-size: 14px;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
     color: #7b6a58;
+    font-size: 14px;
     text-decoration: underline;
-    line-height: 40px;
+    cursor: pointer;
+    padding: 0;
 }

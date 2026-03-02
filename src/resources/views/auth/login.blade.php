@@ -7,7 +7,7 @@
 @endsection
 
 @section('header-btn')
-<a href="/register">register</a>
+<a href="/register" class="header-btn">register</a>
 @endsection
 
 @section('content')

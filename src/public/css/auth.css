@@ -1,7 +1,7 @@
 /* ===== Auth Background ===== */
 
 body {
-    background-color: #f1ece7;
+    background-color: #f5f2ef;
 }
 
 /* ===== Auth Card ===== */
@@ -10,8 +10,8 @@ body {
 .register {
     width: 100%;
     background-color: #ffffff;
-    padding: 70px 80px 40px;
-    max-width: 550px;
+    padding: 50px 90px 40px;
+    max-width: 480px;
     margin: 0 auto;
     border: 1px solid #e0dcd7;
 }

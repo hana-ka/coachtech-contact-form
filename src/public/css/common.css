@@ -11,34 +11,39 @@ body {
 .header {
     background-color: #ffffff;
     border-bottom: 1px solid #e0dcd7;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
     position: relative;
 }
 
 .header__logo {
     margin: 0;
-    font-size: 24px;
+    font-size: 35px;
     font-weight: normal;
 }
 
-/* 右上ボタン配置用 */
+/* ===== Common Header Button ===== */
 
-.header__button {
+.header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 25px;
+    padding: 0 10px;
+
+    font-size: 14px;
+    background-color: #f5f3f1;
+    color: #c5bfb8;
+
+    border: 1px solid #d9cfc5;
+    cursor: pointer;
+    text-decoration: none;
+
     position: absolute;
-    right: 30px;
+    right: 50px;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.header__button a {
-    display: inline-block;
-    padding: 6px 18px;
-    border: 1px solid #d9cfc5;
-    background-color: #f1ece7;
-    color: #7b6a58;
-    text-decoration: none;
-    font-size: 14px;
 }
 
 /* ===== Layout ===== */

@@ -11,28 +11,27 @@ body {
 
 .thanks {
     position: relative;
-    height: 100vh;
-    /* 画面いっぱい */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* 縦中央 */
     align-items: center;
-    /* 横中央 */
+    justify-content: flex-start;
+    padding-top: 45vh;
     text-align: center;
 }
 
 /* ===== Large Background Text ===== */
 
 body::before {
-    content: "Thankyou";
+    content: "Thank you";
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 22vw;
+    font-size: 20vw;
     white-space: nowrap;
-    color: #f3f2f2;
+    color: #7b6a58;
+    opacity: 0.04;
     z-index: 0;
     pointer-events: none;
 }
@@ -40,7 +39,7 @@ body::before {
 /* ===== Message ===== */
 
 .thanks__message {
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 40px;
     position: relative;
     z-index: 1;
@@ -50,9 +49,9 @@ body::before {
 
 .thanks__button a {
     display: inline-block;
-    width: 140px;
-    height: 40px;
-    line-height: 40px;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
     background-color: #7b6a58;
     color: #ffffff;
     text-decoration: none;

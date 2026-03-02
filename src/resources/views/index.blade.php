@@ -152,8 +152,8 @@
             </div>
 
             <div class="form-input">
-                <select name="category_id">
-                    <option value="" disabled {{ old('category_id') ? '' : 'selected' }}>
+                <select name="category_id" required>
+                    <option value="" disabled selected>
                         選択してください
                     </option>
 

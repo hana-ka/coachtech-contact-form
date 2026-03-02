@@ -49,29 +49,31 @@
                 <th>お問い合わせの種類</th>
                 <td>{{ $data['category_content'] }}</td>
             </tr>
-            <tr>
+            <tr class="detail-row">
                 <th>お問い合わせ内容</th>
                 <td>{{ $data['detail'] }}</td>
             </tr>
         </table>
 
         {{-- hidden --}}
-        @foreach($data as $key => $value)
-            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
-        @endforeach
-
         <div class="confirm-buttons">
-            <button type="submit" class="confirm-submit">送信</button>
+
+            <form action="{{ route('contacts.store') }}" method="post" class="confirm-form">
+                @csrf
+                @foreach($data as $key => $value)
+                    <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                @endforeach
+                <button type="submit" class="confirm-submit">送信</button>
+            </form>
+
+            <form action="{{ route('contacts.back') }}" method="post" class="confirm-form">
+                @csrf
+                @foreach($data as $key => $value)
+                    <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                @endforeach
+                <button type="submit" class="confirm-back">修正</button>
+            </form>
+
         </div>
-    </form>
-
-    <form action="{{ route('contacts.back') }}" method="post">
-        @csrf
-        @foreach($data as $key => $value)
-            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
-        @endforeach
-        <button type="submit">修正</button>
-    </form>
-
 </div>
 @endsection

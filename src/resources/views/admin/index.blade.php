@@ -5,7 +5,7 @@
 @section('header-btn')
 <form action="{{ route('logout') }}" method="POST">
     @csrf
-    <button type="submit" class="logout-btn">logout</button>
+    <button type="submit" class="header-btn">logout</button>
 </form>
 @endsection
 
