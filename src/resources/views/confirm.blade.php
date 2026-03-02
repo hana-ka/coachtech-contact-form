@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td>{{ $data['tel1'] }}-{{ $data['tel2'] }}-{{ $data['tel3'] }}</td>
+                <td>{{ $data['tel1'] }}{{ $data['tel2'] }}{{ $data['tel3'] }}</td>
             </tr>
             <tr>
                 <th>住所</th>

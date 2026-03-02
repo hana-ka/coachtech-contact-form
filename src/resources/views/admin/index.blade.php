@@ -20,7 +20,7 @@
 
     {{-- ================= 検索フォーム ================= --}}
     <div class="admin-search">
-        <form method="GET" action="{{ route('admin.index') }}" class="search-form">
+        <form method="GET" action="{{ route('admin.search') }}" class="search-form">
             <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
 
             <select name="gender">
@@ -43,7 +43,7 @@
             <input type="date" name="date">
 
             <button type="submit" class="search-btn">検索</button>
-            <a href="{{ route('admin.index') }}" class="reset-btn">リセット</a>
+            <a href="{{ route('admin.reset') }}" class="reset-btn">リセット</a>
         </form>
     </div>
 
@@ -109,14 +109,14 @@
                             @else その他
                             @endif
                         </p>
-                        <p><strong>メール：</strong>{{ $contact->email }}</p>
+                        <p><strong>メールアドレス：</strong>{{ $contact->email }}</p>
                         <p><strong>電話番号：</strong>{{ $contact->tel }}</p>
                         <p><strong>住所：</strong>{{ $contact->address }}</p>
                         <p><strong>建物名：</strong>{{ $contact->building }}</p>
-                        <p><strong>種類：</strong>{{ $contact->category->content ?? '' }}</p>
-                        <p><strong>内容：</strong>{{ $contact->detail }}</p>
+                        <p><strong>お問い合わせの種類：</strong>{{ $contact->category->content ?? '' }}</p>
+                        <p><strong>お問い合わせの内容：</strong>{{ $contact->detail }}</p>
 
-                        <form action="{{ route('admin.destroy', $contact->id) }}" method="POST">
+                        <form action="{{ route('admin.delete', $contact->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="delete-btn">削除</button>

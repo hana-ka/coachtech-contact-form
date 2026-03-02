@@ -10,6 +10,17 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
+        $contacts = Contact::with('category')
+        ->paginate(7);
+
+        $categories = Category::all();
+
+        return view('admin.index', compact('contacts', 'categories'));
+    }
+
+
+    public function search(Request $request)
+    {
         $query = Contact::with('category');
 
         if ($request->filled('keyword')) {
@@ -36,7 +47,7 @@ class AdminController extends Controller
         }
 
         $contacts = $query->paginate(7)
-                            ->appends($request->query());
+                        ->appends($request->query());
 
         $categories = Category::all();
 

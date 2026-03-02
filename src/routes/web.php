@@ -37,3 +37,13 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/admin/export', [AdminController::class, 'export'])
     ->name('admin.export');
+
+Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
+
+Route::get('/reset', function () {
+    return redirect('/admin');
+})->name('admin.reset');
+
+Route::delete('/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+
+Route::get('/export', [AdminController::class, 'export'])->name('admin.export');
