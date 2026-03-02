@@ -33,7 +33,7 @@ body {
     padding-bottom: 50px;
 }
 
-/* セル共通 */
+/* ===== Common Cell ===== */
 
 .confirm-table th,
 .confirm-table td {
@@ -42,7 +42,7 @@ body {
     border: 1px solid #e6e1db;
 }
 
-/* 左列（ラベル） */
+/* ===== Left Column ===== */
 
 .confirm-table th {
     width: 250px;
@@ -53,14 +53,14 @@ body {
     padding: 22px 24px 22px 40px;
 }
 
-/* 右列（値） */
+/* ===== Right Column ===== */
 
 .confirm-table td {
     background-color: #ffffff;
     color: #7b6a58;
 }
 
-/* ===== Buttons ===== */
+/* ===== Buttons Area ===== */
 
 .confirm-buttons {
     display: flex;
@@ -70,12 +70,14 @@ body {
     margin-top: 40px;
 }
 
-/* formの余白を消す */
+/* ===== Form Reset ===== */
+
 .confirm-form {
     margin: 0;
 }
 
-/* 送信ボタン */
+/* ===== Submit Button ===== */
+
 .confirm-submit {
     width: 120px;
     height: 40px;
@@ -85,13 +87,13 @@ body {
     cursor: pointer;
 }
 
-/* 修正（文字＋下線のみ） */
+/* ===== Back Button ===== */
+
 .confirm-back {
     background: none;
     border: none;
     outline: none;
     box-shadow: none;
-
     color: #7b6a58;
     font-size: 14px;
     text-decoration: underline;

@@ -27,16 +27,10 @@ Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth')
     ->name('admin.index');
 
-Route::delete('/admin/{id}', [AdminController::class, 'destroy'])
-    ->name('admin.destroy');
-
 Route::post('/back', [ContactController::class, 'back'])
     ->name('contacts.back');
 
 Route::post('/login', [AuthController::class, 'login']);
-
-Route::get('/admin/export', [AdminController::class, 'export'])
-    ->name('admin.export');
 
 Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
 

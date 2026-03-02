@@ -43,7 +43,7 @@ body {
     width: 100%;
 }
 
-/* 共通入力 */
+/* ===== Common Inputs ===== */
 
 .search-form input,
 .search-form select {
@@ -55,25 +55,25 @@ body {
     color: #b7afa7;
 }
 
-/* テキスト検索 */
+/* ===== Text Search ===== */
 
 .search-form input[type="text"] {
     width: 420px;
 }
 
-/* 性別 */
+/* ===== Gender Select ===== */
 
 .search-form select:nth-of-type(1) {
     width: 90px;
 }
 
-/* お問い合わせ種類 */
+/* ===== Category Select ===== */
 
 .search-form select:nth-of-type(2) {
     width: 220px;
 }
 
-/* セレクト矢印 */
+/* ===== Select Arrow ===== */
 
 .search-form select {
     appearance: none;
@@ -83,7 +83,7 @@ body {
     background-size: 30px;
 }
 
-/* ================= 日付 ================= */
+/* ===== Date Input ===== */
 
 .search-form input[type="date"] {
     width: 160px;
@@ -247,7 +247,6 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ×ボタン */
 
 .modal-close {
     position: absolute;
@@ -264,7 +263,6 @@ body {
     cursor: pointer;
 }
 
-/* モーダルタイトル */
 
 .modal-content h3 {
     text-align: center;
@@ -273,7 +271,6 @@ body {
     color: #7b6a58;
 }
 
-/* 2列レイアウト */
 
 .modal-row {
     display: flex;
@@ -292,7 +289,7 @@ body {
     line-height: 1.6;
 }
 
-/* 削除ボタン */
+/* ===== Delete Button ===== */
 
 .delete-btn {
     display: block;
@@ -305,7 +302,7 @@ body {
     cursor: pointer;
 }
 
-/* テーブル行ホバー */
+/* ===== Table Hover ===== */
 
 .admin-table tbody tr:hover {
     background-color: #f5f3f1;
